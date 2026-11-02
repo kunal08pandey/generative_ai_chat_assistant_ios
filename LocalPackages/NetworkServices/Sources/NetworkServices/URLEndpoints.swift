@@ -32,3 +32,26 @@ extension Endpoint {
     }
     
 }
+
+// 1. Define the specific API Endpoints
+public enum AuthEndpoint {
+
+    case login(URLCredential)
+
+    var baseURL: URL { URL(string: "https://api.yourdomain.com")! }
+
+        var path: String {
+            switch self { case .login: return "/v1/auth/login" }
+        }
+
+        var method: HTTPMethod { return .post }
+
+        var headers: [String: String]? { return nil }
+
+        var body: Data? {
+            switch self {
+            case .login(let creds):
+                return try? JSONEncoder().encode(creds)
+            }
+        }
+}

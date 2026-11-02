@@ -42,3 +42,23 @@ public final class NetworkClient: HTTPClient {
         }
     }
 }
+
+extension NetworkClient {
+
+    static func makeSecureClient() -> NetworkClient {
+        let configuration = URLSessionConfiguration.default
+
+        // Set Timeouts
+        configuration.timeoutIntervalForRequest = 30.0
+        configuration.timeoutIntervalForResource = 60.0
+
+        // Attach SSL Pinning Delegate
+        let pinningDelegate = SSLPinningDelegate()
+        let session = URLSession(configuration: configuration,
+                                 delegate: pinningDelegate,
+                                 delegateQueue: nil)
+
+        return NetworkClient(session: session)
+    }
+
+}
