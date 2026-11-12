@@ -1,0 +1,11 @@
+.agentflow/*
+.agents/*
+.vscode/*
+.continue/*
+.github/*
+scripts/*
+agentflow/*
+agentflow.yml 
+AGENTS.md
+opencode.json
+githooks/

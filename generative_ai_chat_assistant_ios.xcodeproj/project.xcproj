@@ -14,6 +14,12 @@
     {
       "kind": "local",
       "path": "LocalPackages/NetworkServices",
+    }, {
+      "kind": "remote",
+      "repository": "https://github.com/google/GoogleSignIn-iOS.git",
+      "version": {
+        "up-to-next-major-version": "10.1.0",
+      },
     },
   ],
   "files": [
@@ -40,6 +46,14 @@
       "package-product-members": [
         {
           "product-name": "NetworkServices",
+          "build-phase": { "build-phase": "frameworks" },
+        }, {
+          "package": "GoogleSignIn-iOS",
+          "product-name": "GoogleSignIn",
+          "build-phase": { "build-phase": "frameworks" },
+        }, {
+          "package": "GoogleSignIn-iOS",
+          "product-name": "GoogleSignInSwift",
           "build-phase": { "build-phase": "frameworks" },
         },
       ],
@@ -141,6 +155,7 @@
     "MTL_ENABLE_DEBUG_INFO[config=Release]": "NO",
     "MTL_FAST_MATH": "YES",
     "ONLY_ACTIVE_ARCH[config=Debug]": "YES",
+    "PRODUCT_BUNDLE_IDENTIFIER": "com.kp.generative_ai_chat_assistant_ios",
     "PROJECT_UNIQUE_VALUE": "FY1ZAXOI",
     "STRING_CATALOG_GENERATE_SYMBOLS": "YES",
     "SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug]": "DEBUG $(inherited)",
