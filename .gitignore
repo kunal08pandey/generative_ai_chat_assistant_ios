@@ -9,3 +9,6 @@ agentflow.yml
 AGENTS.md
 opencode.json
 githooks/
+.build
+**/.build/
+.swiftpm
